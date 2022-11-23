@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Assignment 2</title>
+</head>
+<body>
+   <form> 
+    <label for="string">Enter a Sentence</label>
+    <input id="string"><br>
+    <label for="letter">Enter a Letter</label>
+    <input id="letter"><br>
+    <button id="button">Submit</button>
+   </form>
+    
+    <script>
+        document.getElementById("button").onclick = 
+    function() {        
+        var str = document.getElementById("string").value.toLowerCase();
+        var letter = document.getElementById("letter").value.toLowerCase();
+        if(str.indexOf(letter) == -1) {
+            alert("The letter doesnot exist in the sentence")
+        }
+        else {
+            var nextLetter = str.substring(str.indexOf(letter)+1);
+            document.write("Result:",nextLetter)
+        }
+    }
+    </script> 
+</body>
+</html>

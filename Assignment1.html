@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment1 Table & Button</title>
+    <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .center {
+    counter-reset: serial-number;
+  }
+  .center td:first-child:before {
+    counter-increment: serial-number;
+    content: counter(serial-number);
+  }
+  
+    </style>
+  </head>
+  <body>
+    <table class="center" id="myTable">
+      <thead>
+        <th>SL.No.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>Country</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="serial_number"></td>
+          <td>Keshari</td>
+          <td>Pratap</td>
+          <td>tangi</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number"></td>
+          <td>debu</td>
+          <td>pratap</td>
+          <td>cuttack</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number"></td>
+          <td>deb</td>
+          <td>pratap</td>
+          <td>bbsr</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number"></td>
+          <td>jaya</td>
+          <td>pratap</td>
+          <td>puri</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number"></td>
+          <td>raj</td>
+          <td>sahu</td>
+          <td>bari</td>
+          <td>India</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <button onclick="Function_top()">
+      Add row to top
+    </button>
+    <button onclick="Function_bottom()">
+      Add row to bottom
+    </button>
+
+    <script>
+      function Function_top() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "";
+        cell2.innerHTML = "bharat";
+        cell3.innerHTML = "pratap";
+        cell4.innerHTML = "jajpur";
+        cell5.innerHTML = "India";
+      }
+      function Function_bottom() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "";
+        cell2.innerHTML = "ram";
+        cell3.innerHTML = "pratap";
+        cell4.innerHTML = "kendrapda";
+        cell5.innerHTML = "India";
+      }
+    </script>
+  </body>
+</html>
